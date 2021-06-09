@@ -1,3 +1,10 @@
+local HTTP = HTTP
+local use_chttp = pcall(require, "chttp")
+if use_chttp then
+    HTTP = CHTTP
+end
+
+
 KarmaKickNotification = {
     DiscordWebhookURL = CreateConVar("ttt_karmakick_discordwebhookurl", "", FCVAR_PROTECTED + FCVAR_LUA_SERVER, "Discord Webhook URL for karma kick notifications")
 }
